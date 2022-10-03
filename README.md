@@ -1,3 +1,5 @@
+[![Downloads](https://static.pepy.tech/badge/inboxkitten)](https://pepy.tech/project/inboxkitten)
+
 # inboxkitten
 Python Package to make temp email from https://inboxkitten.com/
 
