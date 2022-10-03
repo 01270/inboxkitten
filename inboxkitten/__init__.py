@@ -18,15 +18,18 @@ class InboxKitten:
             InboxKitten.senders.append(str(info['from'])); InboxKitten.subjects.append(str(info['subject']))
         return True
 
+    def clear(self):
+        InboxKitten.keys.clear();InboxKitten.storages.clear()
+        InboxKitten.senders.clear();InboxKitten.subjects.clear()
+
+
     class view:
         def __init__(self, index): self.index = index
 
         @property
         def text(self):
-            try:
                 response = requests.get(f'https://inboxkitten.com/api/v1/mail/getHtml?mailKey=storage-{InboxKitten.storages[self.index]}-{InboxKitten.keys[self.index]}', headers=headers)
                 return response.text
-            except: return False
 
         def save_html(self, filename):
             html = self.text
