@@ -1,6 +1,6 @@
 [![Downloads](https://static.pepy.tech/badge/inboxkitten)](https://pepy.tech/project/inboxkitten)
 
-# inboxkitten
+# inboxkitten v0.0.2
 Python Package to make temp email from https://inboxkitten.com/
 
 ## Installation
@@ -48,4 +48,29 @@ if setup:
         # Save the html text to html file
         print(message.save_html('test.html'))
     else: print('Email is empty')
+```
+
+## Mulit emails
+
+If you are trying to make more than one email
+You have to use .clear() method after each email created
+
+```python 
+from inboxkitten import *
+
+email = InboxKitten('NAME_HERE1@inboxkitten.com')
+email.setup()
+#....Code here....#
+email.clear()
+
+another_email = InboxKitten('NAME_HERE2@inboxkitten.com')
+another_email.setup()
+#....Code here....#
+another_email.clear()
+
+another_email_2 = InboxKitten('NAME_HERE3@inboxkitten.com')
+another_email_2.setup()
+#....Code here....#
+another_email_2.clear()
+
 ```
